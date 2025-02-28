@@ -1,5 +1,6 @@
 ENGLISH // PORTUGUÊS
 
+
 ############## ENGLISH ##############
 
 Fin Project - Financial Asset Management System
@@ -140,7 +141,10 @@ HTTP Status Codes
 500 Internal Server Error: Server internal error
 
 
+
+
 ############## PORTUGUÊS ##############
+
 
 # Projeto Fin - Sistema de Gestão de Ativos Financeiros
 
