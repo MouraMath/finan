@@ -1,3 +1,147 @@
+ENGLISH // PORTUGUÊS
+
+############## ENGLISH ##############
+
+Fin Project - Financial Asset Management System
+Overview
+This project implements a financial asset management system that allows users to manage their investments and track the growth of their assets, including date management in financial operations.
+
+How to Run the Project
+Prerequisites
+
+Java 11
+Gradle
+
+Steps
+Clone the repository
+
+Run the command: ./gradlew bootRun
+
+Access the API at: http://localhost:8080
+
+Access the H2 console at: http://localhost:8080/h2-console
+
+H2 Console Access
+URL: http://localhost:8080/h2-console
+
+JDBC URL: jdbc:h2:mem:findb
+
+Username: sa
+
+Password: (leave blank)
+
+Technologies Used
+Backend
+Java 11: Main programming language
+
+Spring Boot 2.7.8: Framework for Java application development
+
+Spring Data JPA: Facilitates data access and manipulation
+
+H2 Database: In-memory relational database
+
+Lombok: Reduces boilerplate code
+
+Gradle: Build automation tool
+
+Architecture
+The project follows a layered architecture with the MVC pattern adapted for REST APIs:
+
+Controller: Receives HTTP requests and returns responses
+
+Service: Contains business logic
+
+Repository: Responsible for persistence and data access
+
+Model: Defines entities and DTOs of the system
+
+Implemented Features
+Current Account Management
+Balance inquiry by date
+
+Credit and debit entries with date
+
+Validation to prevent negative balance on any date
+
+Asset Management
+Complete CRUD for assets with issue and maturity dates
+
+Market value registration by date
+
+Specific validations for dates (business days, valid period)
+
+Transactions
+Purchase and sale of assets with date
+
+Available quantity validations
+
+Automatic impact on current account balance
+
+Queries
+Asset position by date
+
+Entries by period
+
+Transactions by period
+
+Justification for Choosing H2
+H2 was chosen as the database because it is:
+
+Embedded: Does not require external installation
+
+In-memory: Fast and efficient for development and testing
+
+Compatible with JPA: Supports all necessary functionalities
+
+Web console: Facilitates data visualization and manipulation
+
+REST Endpoints
+Current Account
+GET /conta-corrente/saldo?contaId={id}&data={data}: Query balance on a date
+
+POST /conta-corrente/credito?contaId={id}: Register credit
+
+POST /conta-corrente/debito?contaId={id}: Register debit
+
+GET /conta-corrente/lancamentos?contaId={id}&dataInicio={inicio}&dataFim={fim}: List entries
+
+Assets
+GET /ativos: List all assets
+
+GET /ativos/{nome}: Search asset by name
+
+POST /ativos: Register new asset
+
+PUT /ativos/{nome}: Update asset
+
+DELETE /ativos/{nome}: Remove asset
+
+GET /ativos/posicao?data={data}: Query asset position
+
+Transactions
+POST /movimentacoes/comprar: Register asset purchase
+
+POST /movimentacoes/vender: Register asset sale
+
+GET /movimentacoes?ativo={ativo}&dataInicio={inicio}&dataFim={fim}: List transactions
+
+Market Value
+POST /valor-mercado: Register market value
+
+DELETE /valor-mercado/{id}: Remove market value
+
+HTTP Status Codes
+200 OK: Successful request
+
+400 Bad Request: Validation error or invalid data
+
+404 Not Found: Resource not found
+
+500 Internal Server Error: Server internal error
+
+
+############## PORTUGUÊS ##############
+
 # Projeto Fin - Sistema de Gestão de Ativos Financeiros
 
 ## Visão Geral
